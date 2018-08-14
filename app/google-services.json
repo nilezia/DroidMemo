@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "178214589880",
+    "firebase_url": "https://droidmemo-bfe09.firebaseio.com",
+    "project_id": "droidmemo-bfe09",
+    "storage_bucket": "droidmemo-bfe09.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:178214589880:android:2c5b905408dd0494",
+        "android_client_info": {
+          "package_name": "app.nileza.droidmemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "178214589880-ehu516t1be8oippqkgqs0em67pf53ci8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "app.nileza.droidmemo",
+            "certificate_hash": "06a1d31d4dea20a38c07a53ed54ef485b7062570"
+          }
+        },
+        {
+          "client_id": "178214589880-90a57mkfmpo4mdt5mlto7ljacoitdv8e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRgRp5QthLGUlwoEJJHGFOpwHCUSq-fv8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "178214589880-90a57mkfmpo4mdt5mlto7ljacoitdv8e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
