@@ -66,16 +66,16 @@ class CreatePostActivity : BaseMvpActivity<CreatePostInterface.View, CreatePostP
     }
 
     private fun showBottomSheet() {
-        bottomSheetView.findViewById<TextView>(R.id.menu_bottom_sheet_camera).setOnClickListener({
+        bottomSheetView.findViewById<TextView>(R.id.menu_bottom_sheet_camera).setOnClickListener {
             EZPhotoPick.startPhotoPickActivity(this, chooseCamera())
             bottomSheetDialog.cancel()
 
-        })
+        }
 
-        bottomSheetView.findViewById<TextView>(R.id.menu_bottom_sheet_gallery).setOnClickListener({
+        bottomSheetView.findViewById<TextView>(R.id.menu_bottom_sheet_gallery).setOnClickListener {
             EZPhotoPick.startPhotoPickActivity(this, chooseImage())
             bottomSheetDialog.cancel()
-        })
+        }
 
         bottomSheetDialog.show()
     }

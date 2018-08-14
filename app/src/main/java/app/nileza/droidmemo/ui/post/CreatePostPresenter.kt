@@ -61,17 +61,17 @@ class CreatePostPresenter : BaseMvpPresenterImpl<CreatePostInterface.View>(), Cr
         val imageRef = folderRef?.child(file.lastPathSegment)
         val mUploadTask = imageRef?.putFile(file)
 
-        mUploadTask?.addOnFailureListener({
+        mUploadTask?.addOnFailureListener {
             mView?.upLoadImageUnSuccess(it.message!!)
 
-        })?.addOnSuccessListener({
+        }?.addOnSuccessListener {
             mView?.onHideProgressDialog()
             this.postMessage?.link = it.downloadUrl.toString()
             pushMessage(this.postMessage!!)
             mView?.upLoadImageSuccess(it.uploadSessionUri.toString())
 
 
-        })
+        }
     }
 
     override fun setPostMessage(postMessage: PostMessage?) {
