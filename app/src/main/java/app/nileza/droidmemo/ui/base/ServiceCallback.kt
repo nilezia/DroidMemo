@@ -7,4 +7,5 @@ interface ServiceCallback<in T> {
     fun onSuccess(response: T)
     fun onFailed(msg: String?)
 
+
 }
