@@ -52,27 +52,27 @@ class RegisterActivity : BaseMvpActivity<RegisterInterface.View, RegisterPresent
     }
 
     override fun initInstance() {
-        btn_email_register.setOnClickListener({
+        btn_email_register.setOnClickListener {
             setupUserInfo()
-        })
+        }
 
-        img_profile.setOnClickListener({
+        img_profile.setOnClickListener {
 
             showBottomSheet()
-        })
+        }
     }
 
     private fun showBottomSheet() {
-        bottomSheetView.findViewById<TextView>(R.id.menu_bottom_sheet_camera).setOnClickListener({
+        bottomSheetView.findViewById<TextView>(R.id.menu_bottom_sheet_camera).setOnClickListener {
             EZPhotoPick.startPhotoPickActivity(this, chooseCamera())
             bottomSheetDialog.cancel()
 
-        })
+        }
 
-        bottomSheetView.findViewById<TextView>(R.id.menu_bottom_sheet_gallery).setOnClickListener({
+        bottomSheetView.findViewById<TextView>(R.id.menu_bottom_sheet_gallery).setOnClickListener {
             EZPhotoPick.startPhotoPickActivity(this, chooseImage())
             bottomSheetDialog.cancel()
-        })
+        }
 
         bottomSheetDialog.show()
     }
@@ -88,7 +88,7 @@ class RegisterActivity : BaseMvpActivity<RegisterInterface.View, RegisterPresent
 
         showProgressDialog()
         FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, { task ->
+                .addOnCompleteListener(this) { task ->
 
                     if (!task.isSuccessful) {
                         toastManager(task.exception?.message)
@@ -106,7 +106,7 @@ class RegisterActivity : BaseMvpActivity<RegisterInterface.View, RegisterPresent
 
                     }
                     hideProgressDialog()
-                })
+                }
     }
 
     override fun onValidateFieldPass() {

@@ -58,7 +58,6 @@ class MainFragment : Fragment() {
         //  viewPager = rootView.findViewById(R.id.viewPager)
         // tabLayout = rootView.findViewById(R.id.tabLayout)
 
-
         tabLayout.addTab(tabLayout!!.newTab().setText("Feed"))
         tabLayout.addTab(tabLayout!!.newTab().setText("MyPost"))
 
@@ -88,6 +87,4 @@ class MainFragment : Fragment() {
 
         }
     }
-
-
 }

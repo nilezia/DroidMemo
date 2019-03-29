@@ -8,6 +8,8 @@ import app.nileza.droidmemo.ui.feed.FeedFragment
 
 class TabViewPagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
 
+    private var INT_NUMBER = 2
+
     override fun getItem(position: Int): Fragment {
         return when (position) {
 
@@ -20,6 +22,6 @@ class TabViewPagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
     }
 
     override fun getCount(): Int {
-        return 2
+        return INT_NUMBER
     }
 }

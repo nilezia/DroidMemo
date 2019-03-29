@@ -57,17 +57,17 @@ class LoginActivity : BaseMvpActivity<LoginInterface.View, LoginPresenter>(), Lo
 
     override fun initInstance() {
 
-        btn_register.setOnClickListener({
+        btn_register.setOnClickListener {
             startActivity(goToOtherActivity(RegisterActivity::class.java))
-        })
+        }
 
-        btn_sign_in_with_google.setOnClickListener({
+        btn_sign_in_with_google.setOnClickListener {
             showProgressDialog()
             startActivityForResult(googleSignIn(), RC_SIGN_IN)
 
-        })
+        }
 
-        btn_email_login.setOnClickListener({
+        btn_email_login.setOnClickListener {
 
             if ((!edtUsername.text.toString().trim().isEmpty()) && (!edtPassword.text.toString().trim().isEmpty())) {
                 showProgressDialog()
@@ -75,7 +75,7 @@ class LoginActivity : BaseMvpActivity<LoginInterface.View, LoginPresenter>(), Lo
             } else {
                 Toast.makeText(applicationContext, "UserName or Password is empty!!", Toast.LENGTH_LONG).show()
             }
-        })
+        }
     }
 
     private fun goToOtherActivity(cls: Class<*>) = Intent(this, cls).apply {
@@ -117,7 +117,7 @@ class LoginActivity : BaseMvpActivity<LoginInterface.View, LoginPresenter>(), Lo
     private fun setupGoogleSign() {
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id))
+               .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build()
 
@@ -129,7 +129,6 @@ class LoginActivity : BaseMvpActivity<LoginInterface.View, LoginPresenter>(), Lo
     }
 
     private fun connectGoogle(result: GoogleSignInResult) {
-
 
         if (result.isSuccess) {
             // Signed in successfully, show authenticated UI.
@@ -166,7 +165,7 @@ class LoginActivity : BaseMvpActivity<LoginInterface.View, LoginPresenter>(), Lo
     private fun signInByEmail(email: String, password: String) {
 
         FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, { task ->
+                .addOnCompleteListener(this) { task ->
 
                     Log.d("FragmentActivity", "signInWithEmail:onComplete:" + task.isSuccessful)
                     hideProgressDialog()
@@ -176,12 +175,10 @@ class LoginActivity : BaseMvpActivity<LoginInterface.View, LoginPresenter>(), Lo
 
                     } else {
 
-
                     }
-                })
+                }
 
     }
-
 
     override fun onShowProgressDialog() {
         showProgressDialog()

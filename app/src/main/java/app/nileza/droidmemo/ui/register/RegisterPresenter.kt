@@ -90,17 +90,17 @@ class RegisterPresenter : BaseMvpPresenterImpl<RegisterInterface.View>(), Regist
         val imageRef = folderRef?.child(file.lastPathSegment)
         val mUploadTask = imageRef?.putFile(file)
 
-        mUploadTask?.addOnFailureListener({
+        mUploadTask?.addOnFailureListener {
             mView?.upLoadImageUnSuccess(it.message!!)
 
-        })?.addOnSuccessListener({
+        }?.addOnSuccessListener {
             mView?.onHideProgressDialog()
             linkPath = it.downloadUrl.toString()
             createAccountToRealTimeDB()
             mView?.upLoadImageSuccess(it.uploadSessionUri.toString())
 
 
-        })
+        }
     }
 }
 
